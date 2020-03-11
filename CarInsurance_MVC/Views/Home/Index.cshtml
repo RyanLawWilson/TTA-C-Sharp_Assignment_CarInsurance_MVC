@@ -1,0 +1,122 @@
+﻿<div class="row m-4">
+    <div class="card mx-auto shadow">
+        <div class="card-header text-center bg-dark">
+            <h4 class="m-0 text-light">Type in your information to see your quote!</h4>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("CalculateQuote", "Home", FormMethod.Post))
+            {
+
+                @* First Name, Last Name, Date of Birth *@
+                <div class="row align-items-center mb-2">
+                    <div class="col-3">
+                        <label for="FirstName">First Name</label>
+                        <input type="text" required name="FirstName" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <label for="LastName">Last Name</label>
+                        <input type="text" required name="LastName" class="form-control" />
+                    </div>
+                    <div class="col">
+
+                        @* Date of Birth *@
+                        <label>Date of Birth</label>
+                        <div class="row no-gutters">
+                            <div class="col mr-1">
+                                <select name="dobMonth" class="custom-select">
+                                    <option value="01">Jan</option>
+                                    <option value="02">Feb</option>
+                                    <option value="03">Mar</option>
+                                    <option value="04">Apr</option>
+                                    <option value="05">May</option>
+                                    <option value="06">Jun</option>
+                                    <option value="07">Jul</option>
+                                    <option value="08">Aug</option>
+                                    <option value="09">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">Nov</option>
+                                    <option value="12">Dec</option>
+                                </select>
+                            </div>
+                            <div class="col mr-1">
+                                <select name="dobDay" class="custom-select">
+                                    @for (int i = 1; i <= 31; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col mr-1">
+                                <select name="dobYear" class="custom-select">
+                                    @for (int i = 0; i < 121; i++)
+                                    {
+                                        <option value="@(DateTime.Now.Year - i)">@(DateTime.Now.Year - i)</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-2 align-items-center">
+                    <div class="col-6">
+                        <label for="EmailAddress">Email Address</label>
+                        <input type="email" required name="EmailAddress" class="form-control" />
+                    </div>
+
+                    <div class="col-2 m-0 p-1">
+                        <p class="m-0 p-0">Have you had any DUIs?</p>
+                    </div>
+
+                    <div class="col m-0 p-0">
+                        <input name="DUI" type="checkbox" />
+                    </div>
+
+                    <div class="col-2 m-0 p-0">
+                        <p class="m-0 p-0">Select for full coverage</p>
+                    </div>
+
+                    <div class="col">
+                        <input name="FullCoverage" type="checkbox" />
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <label for="CarYear">Car Year</label>
+                        <input required type="number" name="CarYear" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <label for="CarMake">Car Make</label>
+                        <input type="text" name="CarMake" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <label for="CarModel">Car Model</label>
+                        <input type="text" name="CarModel" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-6 mt-1">
+                        <p>How many speeding tickects do you have?</p>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" name="NumberOfTickets" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-7">
+                        <button type="submit" class="btn btn-block btn-success">Get Quote</button>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>

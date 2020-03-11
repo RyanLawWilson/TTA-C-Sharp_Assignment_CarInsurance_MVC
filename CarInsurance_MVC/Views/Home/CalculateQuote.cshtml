@@ -1,0 +1,21 @@
+﻿<div class="row m-4 justify-content-center">
+    <div class="col-6 text-center">
+        <div class="card shadow">
+            <div class="card-header bg-dark">
+                <h4 class="m-0 text-danger">Your Quote</h4>
+            </div>
+            <div class="card-body bg-dark">
+                <div class="row justify-content-center m-3">
+                    <div class="col">
+                        <h3 class="text-light">A @ViewBag.CarYear @ViewBag.CarModel from @ViewBag.CarMake...<br />Your Quote is</h3>
+                        <h1 class="text-light"><span class="badge badge-success">$@String.Format($"{ViewBag.Quote:F2}")</span> / month</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <button type="submit" class="btn btn-success mt-4">Back to Quote Form</button>
+        }
+    </div>
+</div>

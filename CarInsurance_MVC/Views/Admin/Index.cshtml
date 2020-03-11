@@ -1,0 +1,28 @@
+﻿@using CarInsurance_MVC.ViewModels
+@model List<UserVM>
+
+<div class="row mx-auto bg-dark justify-content-center text-light">
+    <h1>Car Insurance Users and Quotes</h1>
+</div>
+
+<div class="row no-gutters m-3">
+    @foreach (var user in Model)
+    {
+        <div class="card col-sm-6 col-md-4 col-lg-3 shadow">
+
+            <div class="card-header text-center">
+                <h5 class="m-0">@user.FirstName @user.LastName</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col">
+                        <p class="text-center">
+                            @user.EmailAddress<br />
+                        </p>
+                        <h2 class="text-center"><span class="badge badge-success">$@String.Format($"{user.Quote:F2}")</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
