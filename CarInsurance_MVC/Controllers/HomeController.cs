@@ -54,7 +54,7 @@ namespace CarInsurance_MVC.Controllers
             // If it's full coverage, add 50% to the total.
             if (wantsFullCoverage) quote *= 1.50M;
 
-            using (CarInsuranceEntities1 db = new CarInsuranceEntities1())
+            using (CarInsuranceEntities db = new CarInsuranceEntities())
             {
                 var user = new User();
                 user.FirstName = firstName;

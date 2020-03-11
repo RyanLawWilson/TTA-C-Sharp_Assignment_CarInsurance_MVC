@@ -13,7 +13,7 @@ namespace CarInsurance_MVC.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            using (CarInsuranceEntities1 db = new CarInsuranceEntities1())
+            using (CarInsuranceEntities db = new CarInsuranceEntities())
             {
                 var users = db.Users;
 
